@@ -1,7 +1,9 @@
 #include<stdio.h>
+#include<math.h>
+//#define n 10
 int main (void)
 {
-    int p, i, prime[100], primeindex, isprime,n;
+    int p, i, prime[100], primeindex, isprime, n;
     prime[0]=2;
     prime[1]=3;
     primeindex=2;
@@ -10,7 +12,7 @@ int main (void)
     for(p=5;p<=n;p=p+2)
     {
         isprime=1;
-        for(i=0;i<primeindex;i++)
+        for(i=0;i<primeindex&&isprime==1;i++)
         {
             if(p%prime[i]==0)
             isprime=0;
@@ -24,4 +26,6 @@ int main (void)
     printf("primes below %d are:\n",n);
     for(i=0;i<primeindex;i++)
     printf("%d\n",prime[i]);
+    return 0;
+
 }
